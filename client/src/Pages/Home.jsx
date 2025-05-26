@@ -2,15 +2,46 @@ import React from "react";
 import Header from "../component/main/Header";
 import { Slider } from "../component/popular";
 import CategoryBar from "./Home/CategoryBar";
-import { all, bear, burger, meat, noodles, pizza, vegetable } from "../assets";
+import {
+  all,
+  banner1,
+  bear,
+  burger,
+  meat,
+  noodles,
+  pizza,
+  vegetable,
+} from "../assets";
 import ValuePackItems from "./Home/ValuePackItems";
 import { ProductList } from "./Home/ProductCard";
 
-const DummyCard = ({ title }) => (
-  <div className="min-w-[200px] h-[220px] md:h-[500px] bg-zinc-200 dark:bg-zinc-700 rounded-lg flex items-center justify-center text-lg font-semibold text-zinc-800 dark:text-white shadow">
-    {title}
+const DummyCard = ({ title, img }) => (
+  <div
+    className="
+    min-w-[200px] 
+    h-[220px] md:h-[500px] 
+    bg-zinc-200 dark:bg-zinc-800 
+    rounded-xl 
+    overflow-hidden 
+    shadow-md dark:shadow-lg 
+    flex items-end 
+    cursor-pointer
+    transition-transform duration-300 ease-in-out
+    hover:scale-[1.03]
+  "
+  >
+    <img
+      className="w-full h-full object-cover"
+      src={img}
+      alt={title}
+      loading="lazy"
+    />
+    {/* <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/60 to-transparent px-4 py-3">
+      <h3 className="text-white text-lg font-semibold truncate">{title}</h3>
+    </div> */}
   </div>
 );
+
 
 const Home = () => {
   const foodCategories = [
@@ -316,7 +347,13 @@ const Home = () => {
       <div className="mx-auto my-1">
         <Slider>
           {[...Array(10)].map((_, i) => (
-            <DummyCard key={i} title={`Card ${i + 1}`} />
+            <DummyCard
+              key={i}
+              title={`Card ${i + 1}`}
+              img={
+                "https://tse3.mm.bing.net/th?id=OIP.sfeWbB7veqzH_ggd3h7HPgHaEL&pid=Api&P=0&h=180"
+              }
+            />
           ))}
         </Slider>
       </div>

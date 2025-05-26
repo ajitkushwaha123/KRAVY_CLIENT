@@ -12,6 +12,7 @@ import noodles from "./noodles.png";
 import pizza from "./pizza.png";
 import vegetable from "./vegetable.png";
 import all from "./all.png";
+import banner1 from "./banner1.png";
 
 export {
   login,
@@ -28,4 +29,5 @@ export {
   vegetable,
   noodles,
   all,
+  banner1,
 };

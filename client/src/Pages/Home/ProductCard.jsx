@@ -43,23 +43,24 @@ const ProductCard = ({ product, onAddToCart }) => {
           </button>
         )}
 
-        <div className="mt-auto flex items-center justify-between gap-2 flex-wrap">
-          <div className="flex items-center flex-wrap gap-2">
+        <div className="mt-auto flex items-center justify-between min-w-0">
+          <div className="flex items-center space-x-2 overflow-hidden min-w-0">
             {product.originalPrice && (
-              <span className="text-gray-500 line-through text-xs mr-2">
+              <span className="text-gray-500 line-through text-xs">
                 ₹{product.originalPrice}
               </span>
             )}
-            <span className="font-bold text-green-600 text-sm mr-2">
+            <span className="font-bold text-green-600 text-sm">
               ₹{product.discountedPrice}
             </span>
             {product.deliveryTime && (
-              <div className="flex hidden items-center text-gray-500 text-xs">
+              <div className="md:flex hidden items-center text-gray-500 text-xs">
                 <Clock className="w-3 h-3 mr-1" />
                 <span>{product.deliveryTime} min</span>
               </div>
             )}
           </div>
+
           <button
             onClick={() => onAddToCart(product)}
             className="bg-green-600 text-white rounded-full w-9 h-9 flex-shrink-0 flex items-center justify-center hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
