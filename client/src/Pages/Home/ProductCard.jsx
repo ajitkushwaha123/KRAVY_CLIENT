@@ -29,7 +29,7 @@ const ProductCard = ({ product, onAddToCart }) => {
         </h3>
 
         {/* Description with gray text, truncate or full */}
-        <p className="text-sm text-gray-500 mb-2">
+        <p className="text-sm text-gray-500">
           {readMore ? product.description : truncate(product.description, 70)}
         </p>
 
@@ -37,14 +37,14 @@ const ProductCard = ({ product, onAddToCart }) => {
         {product.description.length > 70 && (
           <button
             onClick={() => setReadMore(!readMore)}
-            className="text-xs text-green-600 font-semibold mb-2 focus:outline-none"
+            className="text-xs text-green-600 font-semibold focus:outline-none"
           >
             {readMore ? "Read Less" : "Read More"}
           </button>
         )}
 
-        <div className="mt-auto flex items-center justify-between flex-wrap gap-2">
-          <div className="flex items-center mb-2 flex-wrap gap-2">
+        <div className="mt-auto flex items-center justify-between gap-2 flex-wrap">
+          <div className="flex items-center flex-wrap gap-2">
             {product.originalPrice && (
               <span className="text-gray-500 line-through text-xs mr-2">
                 ₹{product.originalPrice}
@@ -54,7 +54,7 @@ const ProductCard = ({ product, onAddToCart }) => {
               ₹{product.discountedPrice}
             </span>
             {product.deliveryTime && (
-              <div className="flex items-center text-gray-500 text-xs">
+              <div className="flex hidden items-center text-gray-500 text-xs">
                 <Clock className="w-3 h-3 mr-1" />
                 <span>{product.deliveryTime} min</span>
               </div>
@@ -62,7 +62,7 @@ const ProductCard = ({ product, onAddToCart }) => {
           </div>
           <button
             onClick={() => onAddToCart(product)}
-            className="bg-green-600 text-white rounded-full w-9 h-9 flex items-center justify-center hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="bg-green-600 text-white rounded-full w-9 h-9 flex-shrink-0 flex items-center justify-center hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
           >
             <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
               <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
@@ -76,7 +76,7 @@ const ProductCard = ({ product, onAddToCart }) => {
 
 export const ProductList = ({ products, handleAddToCart }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 p-4">
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 p-4">
       {products?.map((product) => (
         <ProductCard
           key={product?.name}
