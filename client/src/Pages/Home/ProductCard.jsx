@@ -67,12 +67,11 @@ const ProductCard = ({ product, onAddToCart }) => {
               ₹{product.discountedPrice}
             </span>
             {product.deliveryTime && (
-              <div className="flex items-center text-gray-500 text-xs">
+              <div className="md:flex hidden items-center text-gray-500 text-xs">
                 <Clock className="w-3 h-3 mr-1" />
                 <span>{product.deliveryTime} min</span>
               </div>
             )}
-
           </div>
           <button
             onClick={() => onAddToCart(product)}

@@ -329,7 +329,7 @@ const Home = () => {
         <ValuePackItems valuePacks={DummyValuePacks} />
       </div>
 
-      <div className="px-5">
+      <div className="md:px-5">
         <h2 className="text-2xl font-semibold ">Your Trusted Picks</h2>
         <ProductList products={productData} handleAddToCart={handleAddToCart} />
       </div>
