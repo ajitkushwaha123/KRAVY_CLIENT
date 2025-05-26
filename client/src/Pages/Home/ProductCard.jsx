@@ -4,13 +4,11 @@ import React, { useState } from "react";
 const ProductCard = ({ product, onAddToCart }) => {
   const [readMore, setReadMore] = useState(false);
 
-  // Truncate function (cuts text to maxLength and adds ...)
   const truncate = (text, maxLength) =>
     text?.length > maxLength ? text.slice(0, maxLength) + "..." : text;
 
   return (
     <div className="bg-gray-50 relative rounded-xl shadow-md overflow-hidden flex flex-col transition hover:shadow-lg">
-      {/* Image */}
       <div className="h-40 w-full">
         <img
           className="w-full h-full object-cover"
@@ -64,7 +62,7 @@ const ProductCard = ({ product, onAddToCart }) => {
           </div>
           <button
             onClick={() => onAddToCart(product)}
-            className="bg-green-600 hidden text-white rounded-full w-9 h-9 md:flex items-center justify-center hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="bg-green-600 text-white rounded-full w-9 h-9 flex items-center justify-center hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
           >
             <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
               <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
@@ -78,7 +76,7 @@ const ProductCard = ({ product, onAddToCart }) => {
 
 export const ProductList = ({ products, handleAddToCart }) => {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 p-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 p-4">
       {products?.map((product) => (
         <ProductCard
           key={product?.name}
