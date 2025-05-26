@@ -196,7 +196,7 @@ const Home = () => {
   const productData = [
     {
       name: "Chicken Burger",
-      restaurant: "Cookie Heaven",
+      description : "Cookie Heaven",
       rating: 4.5,
       deliveryTime: 50,
       calories: 500,
@@ -207,7 +207,7 @@ const Home = () => {
     },
     {
       name: "BBQ Burger",
-      restaurant: "Cookie Heaven",
+      description : "Cookie Heaven",
       rating: 4.5,
       deliveryTime: 50,
       calories: 500,
@@ -218,7 +218,7 @@ const Home = () => {
     },
     {
       name: "Veggie Delight Pizza",
-      restaurant: "Pizza Palace",
+      description : "Pizza Palace",
       rating: 4.8,
       deliveryTime: 40,
       calories: 700,
@@ -229,7 +229,7 @@ const Home = () => {
     },
     {
       name: "Paneer Tikka",
-      restaurant: "Spice Hub",
+      description : "Spice Hub",
       rating: 4.7,
       deliveryTime: 30,
       calories: 400,
@@ -240,7 +240,7 @@ const Home = () => {
     },
     {
       name: "Mutton Biryani",
-      restaurant: "Royal Feast",
+      description : "Royal Feast",
       rating: 4.9,
       deliveryTime: 60,
       calories: 900,
@@ -251,7 +251,7 @@ const Home = () => {
     },
     {
       name: "Masala Dosa",
-      restaurant: "South Spice",
+      description : "South Spice",
       rating: 4.6,
       deliveryTime: 35,
       calories: 350,
@@ -262,7 +262,7 @@ const Home = () => {
     },
     {
       name: "Chocolate Milkshake",
-      restaurant: "Cool Drinks",
+      description : "Cool Drinks",
       rating: 4.3,
       deliveryTime: 20,
       calories: 450,
@@ -273,7 +273,7 @@ const Home = () => {
     },
     {
       name: "Pasta Alfredo",
-      restaurant: "Italiano",
+      description : "Italiano",
       rating: 4.4,
       deliveryTime: 40,
       calories: 600,
@@ -284,7 +284,7 @@ const Home = () => {
     },
     {
       name: "Caesar Salad",
-      restaurant: "Green Bowl",
+      description : "Green Bowl",
       rating: 4.2,
       deliveryTime: 25,
       calories: 300,
@@ -295,7 +295,7 @@ const Home = () => {
     },
     {
       name: "Chicken Shawarma",
-      restaurant: "Middle East Flavors",
+      description : "Middle East Flavors",
       rating: 4.7,
       deliveryTime: 45,
       calories: 650,
