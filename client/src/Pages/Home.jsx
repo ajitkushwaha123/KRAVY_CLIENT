@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../component/main/Header";
-import { Slider } from "../component/popular";
+import { Slider, StickyBottomNotification } from "../component/popular";
 import CategoryBar from "./Home/CategoryBar";
 import {
   all,
@@ -41,7 +41,6 @@ const DummyCard = ({ title, img }) => (
     </div> */}
   </div>
 );
-
 
 const Home = () => {
   const foodCategories = [
@@ -370,6 +369,7 @@ const Home = () => {
         <h2 className="text-2xl font-semibold ">Your Trusted Picks</h2>
         <ProductList products={productData} handleAddToCart={handleAddToCart} />
       </div>
+      <StickyBottomNotification />
     </div>
   );
 };
