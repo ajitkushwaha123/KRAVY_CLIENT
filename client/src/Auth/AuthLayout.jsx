@@ -12,10 +12,10 @@ const AuthLayout = ({
 }) => {
   return (
     <div className="w-full bg-backy bg-cover bg-repeat h-screen flex justify-center items-center">
-      <div className="w-[40%] px-10 flex justify-center items-center h-full">
-        <div className="w-full max-w-md p-8 bg-white dark:bg-gray-900 rounded-lg shadow-lg">
+      <div className="w-[100%] lg:w-[40%] px-5 md:px-10 flex justify-center items-center h-full">
+        <div className="w-full md:max-w-md p-8 bg-white dark:bg-gray-900 rounded-lg shadow-lg">
           <div className="flex justify-center mb-6">
-            <div className="bg-indigo-500 w-[50px] h-[50px] flex justify-center items-center rounded-xl">
+            <div className="bg-white w-[50px] h-[50px] flex justify-center items-center rounded-xl">
               <img src={logo} alt="Logo" className="w-3/4" />
             </div>
           </div>
@@ -50,7 +50,7 @@ const AuthLayout = ({
         </div>
       </div>
 
-      <div className="w-[60%] h-full bg-gray-100 dark:bg-gray-800">
+      <div className="lg:w-[60%] lg:block hidden h-full bg-gray-100 dark:bg-gray-800">
         <video className="w-full h-full object-cover" autoPlay loop muted>
           <source src={dashboardVideo} type="video/mp4" />
         </video>

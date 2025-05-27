@@ -1,5 +1,6 @@
 import React from "react";
 import { ChevronDown, Search } from "lucide-react";
+import { useNavigate } from "react-router";
 
 // Constants
 const AVATAR_URL =
@@ -12,6 +13,8 @@ const SEARCH_PLACEHOLDER = "Search for restaurants, cuisines or dishes";
 const MOBILE_SEARCH_PLACEHOLDER = "Search restaurants, cuisines or dishes";
 
 const Header = ({ location = "Bangalore" }) => {
+  const navigate = useNavigate();
+
   return (
     <header className="bg-white dark:bg-background-dark shadow-md dark:shadow-surface-dark py-3 px-4 sm:px-6 lg:px-8 sticky top-0 z-10">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
@@ -61,7 +64,10 @@ const Header = ({ location = "Bangalore" }) => {
             </span>
           </button>
 
-          <button className="relative p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-700">
+          <button
+            onClick={() => navigate("/login")}
+            className="relative p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-700"
+          >
             <svg
               className="h-6 w-6 text-zinc-600 dark:text-zinc-300"
               fill="none"

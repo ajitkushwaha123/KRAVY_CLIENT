@@ -8,6 +8,7 @@ import Cart from "./Pages/Cart/Cart";
 import SingleProduct from "./Pages/Product/SingleProduct";
 import Splash from "./Pages/Splash/Splash";
 import { useEffect, useState } from "react";
+import OnboardingScreen from "./Pages/Onboarding/OnboardingScreen";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -27,6 +28,7 @@ function App() {
         <Route path="/login" element={<PasswordLogin />} />
         <Route path="/reset-password" element={<ForgetPassword />} />
         <Route path="/" element={loading ? <Splash /> : <Home />} />
+        <Route path="/onboarding" element={<OnboardingScreen />} />
 
         <Route path="/cart" element={<Cart />} />
         <Route path="/product/:id" element={<SingleProduct />} />

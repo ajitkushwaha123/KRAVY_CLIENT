@@ -14,6 +14,10 @@ import vegetable from "./vegetable.png";
 import all from "./all.png";
 import banner1 from "./banner1.png";
 import logo from "./logo.png";
+import onboarding1 from "./onboarding1.png";
+import onboarding2 from "./onboarding2.png";
+import onboarding3 from "./onboarding3.png";
+import security from "./gifs/security.gif";
 
 export {
   login,
@@ -32,4 +36,8 @@ export {
   all,
   banner1,
   logo,
+  onboarding1,
+  onboarding2,
+  onboarding3,
+  security,
 };
