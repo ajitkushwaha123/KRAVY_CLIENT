@@ -1,6 +1,15 @@
 import { sendEmail } from "../utils/send-email.js";
 import User from "../models/User.js";
 import { checkEmailFormat } from "../utils/helper.js";
+import twilio from "twilio";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const client = twilio(
+  process.env.TWILIO_ACCOUNT_SID,
+  process.env.TWILIO_AUTH_TOKEN
+);
 
 export const sendOTP = async (req, res) => {
   try {
@@ -13,14 +22,16 @@ export const sendOTP = async (req, res) => {
       verificationCode: code,
     };
 
-    const result = await sendEmail({
-      to: email,
-      subject:
-        subject ||
-        "✨ Verify Your Email for Kravy 🍴🥗 - Your OTP Code is Ready!",
-      templateName: "otp",
-      templateData: emailData,
-    });
+    const result = await sentOtpOnMsg("+918595443359", "1234");
+
+    // const result = await sendEmail({
+    //   to: email,
+    //   subject:
+    //     subject ||
+    //     "✨ Verify Your Email for Kravy 🍴🥗 - Your OTP Code is Ready!",
+    //   templateName: "otp",
+    //   templateData: emailData,
+    // });
 
     res.status(200).json(result);
   } catch (error) {
@@ -49,15 +60,19 @@ export const sendLoginOtp = async (req, res) => {
       verificationCode: code,
     };
 
-    const result = await sendEmail({
-      to: email,
-      subject:
-        subject ||
-        "✨ Verify Your Email for Kravy 🍴🥗 - Your OTP Code is Ready!",
-      templateName: "otp",
-      templateData: emailData,
-    });
+    console.log("Login  with otp");
+    const result = await sentOtpOnMsg("+918595443359", "1234");
 
+    // const result = await sendEmail({
+    //   to: email,
+    //   subject:
+    //     subject ||
+    //     "✨ Verify Your Email for Kravy 🍴🥗 - Your OTP Code is Ready!",
+    //   templateName: "otp",
+    //   templateData: emailData,
+    // });
+
+    console.log(result);
     res.status(200).json(result);
   } catch (error) {
     res.status(500).json({ success: false, msg: error.message });
@@ -77,7 +92,7 @@ export const sendRegistrationSuccessEmail = async (req, res, next) => {
     const emailData = {
       userName: username,
       userEmail: email,
-      verificationCode: "1234", 
+      verificationCode: "1234",
     };
 
     const result = await sendEmail({
@@ -172,4 +187,13 @@ export const sendOrderSuccessEmail = async ({ username, email }) => {
     console.error("Email sending failed:", err.message);
     throw new Error("Email sending failed");
   }
+};
+
+export const sentOtpOnMsg = async (phone, otp) => {
+  console.log(phone, otp, process.env.TWILIO_PHONE_NUMBER);
+  return client.messages.create({
+    body: `🔐 Your OTP is: ${otp}`,
+    from: process.env.TWILIO_PHONE_NUMBER,
+    to: phone,
+  });
 };

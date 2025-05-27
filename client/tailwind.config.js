@@ -8,6 +8,7 @@ export default {
           "url('https://i.pinimg.com/736x/32/49/14/324914bb1233fa62e640c6a1133d550c.jpg')",
       },
       colors: {
+        primaryApp: "#FE724C",
         primary: {
           light: "#4F46E5",
           dark: "#6366F1",

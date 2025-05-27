@@ -43,7 +43,7 @@ export default function CartPage() {
     <div className="min-h-screen bg-gray-100 text-[#1C1C1C] flex flex-col">
       {/* Header */}
       <div className="flex items-center bg-white justify-between p-4 border-b">
-        <span onClick={() => navigate("/")}>
+        <span onClick={() => navigate('/')}>
           <ArrowLeft className="h-5 w-5" />
         </span>
         <h1 className="text-lg font-semibold">Haldiram’s</h1>

@@ -1,5 +1,5 @@
 import login from "./login.png";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import dashboardVideo from "./dashboard-video.mp4";
 import spinner from "./icons8-spinner.gif";
 import dummyIcon from "./product-dummy-icon.png";
@@ -13,10 +13,11 @@ import pizza from "./pizza.png";
 import vegetable from "./vegetable.png";
 import all from "./all.png";
 import banner1 from "./banner1.png";
+import logo from "./logo.png";
 
 export {
   login,
-  logo,
+  // logo,
   dashboardVideo,
   spinner,
   dummyIcon,
@@ -30,4 +31,5 @@ export {
   noodles,
   all,
   banner1,
+  logo,
 };

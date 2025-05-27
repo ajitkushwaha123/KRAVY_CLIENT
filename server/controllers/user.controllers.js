@@ -16,7 +16,7 @@ import crypto from "crypto";
 dotenv.config();
 
 export const register = async (req, res, next) => {
-  const { email, password, username , role } = req.body;
+  const { email, password, username, role } = req.body;
 
   console.log(email, password, username);
 
@@ -213,7 +213,6 @@ export const login = async (req, res) => {
       { expiresIn: "1d" }
     );
 
-
     console.log("token", token);
     res.cookie("authToken", token, {
       path: "/",
@@ -222,7 +221,6 @@ export const login = async (req, res) => {
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
     });
-
 
     return res.status(200).json({
       success: true,
@@ -570,7 +568,6 @@ export const loginWithOtp = async (req, res) => {
       sameSite: "lax",
     });
 
-
     return res.status(200).json({
       success: true,
       user,
@@ -673,7 +670,6 @@ export const verifyResetToken = async (req, res, next) => {
   try {
     const { resetPasswordToken } = req.body;
 
-    
     if (!resetPasswordToken) {
       return res.status(400).json({
         success: false,
@@ -681,10 +677,9 @@ export const verifyResetToken = async (req, res, next) => {
       });
     }
 
-    
     const user = await User.findOne({
       resetPasswordToken,
-      resetPasswordExpires: { $gt: Date.now() }, 
+      resetPasswordExpires: { $gt: Date.now() },
     });
 
     if (!user) {
