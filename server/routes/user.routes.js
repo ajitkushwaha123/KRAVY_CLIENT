@@ -43,13 +43,7 @@ user.post(
   sendOTP
 );
 
-
-user.post(
-  "/resend-otp",
-  isValidEmail,
-  generateOtp,
-  sendOTP
-);
+user.post("/resend-otp", isValidEmail, generateOtp, sendOTP);
 
 user.post(
   "/register",
@@ -58,6 +52,8 @@ user.post(
   sendRegistrationSuccessEmail,
   loginWithOtp
 );
+
+user.get("/me", verifyToken, getUser);
 
 user.get("/all", getAllUser);
 user.get("/all/:id", getUserById);
@@ -81,11 +77,7 @@ user.get("/success-email", async (req, res) => {
   });
 });
 
-user.post(
-  "/forget-password",
-  generateResetToken,
-  resetPasswordEmail
-);
+user.post("/forget-password", generateResetToken, resetPasswordEmail);
 
 user.post("/reset-password", verifyResetToken, resetPassword);
 

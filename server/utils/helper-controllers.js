@@ -69,6 +69,8 @@ export const findEmailViaUsernameOrEmail = async (req, res, next) => {
 
 export const isUsernameExistInDB = async (req, res, next) => {
   const { username } = req.body;
+
+  console.log("username", username);
   if (!username) {
     return res
       .status(400)

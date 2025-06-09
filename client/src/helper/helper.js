@@ -3,7 +3,7 @@ import { tryCatch } from "../../utils/tryCatch";
 
 axios.defaults.withCredentials = true;
 
-const API_URL = `${import.meta.env.VITE_API_URL}/api`;
+const API_URL = `${import.meta.env.VITE_API_URL}`;
 
 export const loginWithPassword = (data) =>
   tryCatch(
@@ -64,16 +64,3 @@ export const resetPassword = (data) =>
     () => axios.post(`${API_URL}/user/reset-password`, data),
     "Error in resetting password... !"
   );
-
-// Projects
-export const addProject = (values) => {
-  const formData = new FormData();
-  formData.append("name", values.name);
-  formData.append("description", values.description);
-  formData.append("file", values.file);
-
-  return tryCatch(
-    () => axios.post(`${API_URL}/project`, formData),
-    "Failed to add project"
-  );
-};

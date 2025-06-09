@@ -73,12 +73,13 @@ const Register = () => {
       password: "",
       otp: "",
       subject: "✨ Verify Your Email for Kravy 🍴🥗 - Your OTP Code is Ready!",
+      role: "restaurant",
     },
     validationSchema: onValidate,
     validateOnBlur: false,
     validateOnChange: false,
     onSubmit: async (values, formikHelpers) => {
-      setIsLoading(true); 
+      setIsLoading(true);
       await handleFormSubmit(values, formikHelpers, {
         helperFunction: func,
         setIsLoading,
@@ -99,7 +100,10 @@ const Register = () => {
     <AuthLayout
       title="Create an account"
       subtitle="Join Kravy and enjoy personalized meals!"
-      footerLink={{ text: "Already have an account?", link: "/login" }}
+      footerLink={{
+        text: "Already have an account?",
+        link: "/restaurant/login",
+      }}
     >
       <Toaster position="top-center" reverseOrder={false} />
 

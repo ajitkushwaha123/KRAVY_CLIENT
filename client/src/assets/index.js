@@ -18,6 +18,7 @@ import onboarding1 from "./onboarding1.png";
 import onboarding2 from "./onboarding2.png";
 import onboarding3 from "./onboarding3.png";
 import security from "./gifs/security.gif";
+import userIcon from "./user.jpg";
 
 export {
   login,
@@ -40,4 +41,5 @@ export {
   onboarding2,
   onboarding3,
   security,
+  userIcon,
 };

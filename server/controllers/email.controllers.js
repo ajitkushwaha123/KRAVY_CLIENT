@@ -22,16 +22,14 @@ export const sendOTP = async (req, res) => {
       verificationCode: code,
     };
 
-    const result = await sentOtpOnMsg("+918595443359", "1234");
-
-    // const result = await sendEmail({
-    //   to: email,
-    //   subject:
-    //     subject ||
-    //     "✨ Verify Your Email for Kravy 🍴🥗 - Your OTP Code is Ready!",
-    //   templateName: "otp",
-    //   templateData: emailData,
-    // });
+    const result = await sendEmail({
+      to: email,
+      subject:
+        subject ||
+        "✨ Verify Your Email for Kravy 🍴🥗 - Your OTP Code is Ready!",
+      templateName: "otp",
+      templateData: emailData,
+    });
 
     res.status(200).json(result);
   } catch (error) {
@@ -60,17 +58,14 @@ export const sendLoginOtp = async (req, res) => {
       verificationCode: code,
     };
 
-    console.log("Login  with otp");
-    const result = await sentOtpOnMsg("+918595443359", "1234");
-
-    // const result = await sendEmail({
-    //   to: email,
-    //   subject:
-    //     subject ||
-    //     "✨ Verify Your Email for Kravy 🍴🥗 - Your OTP Code is Ready!",
-    //   templateName: "otp",
-    //   templateData: emailData,
-    // });
+    const result = await sendEmail({
+      to: email,
+      subject:
+        subject ||
+        "✨ Verify Your Email for Kravy 🍴🥗 - Your OTP Code is Ready!",
+      templateName: "otp",
+      templateData: emailData,
+    });
 
     console.log(result);
     res.status(200).json(result);

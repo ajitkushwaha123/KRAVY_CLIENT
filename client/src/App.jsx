@@ -9,6 +9,8 @@ import SingleProduct from "./Pages/Product/SingleProduct";
 import Splash from "./Pages/Splash/Splash";
 import { useEffect, useState } from "react";
 import OnboardingScreen from "./Pages/Onboarding/OnboardingScreen";
+import AdminProfilePage from "./Pages/Admin/Profile/Profile";
+import AdminLayout from "./Pages/Admin/AdminLayout";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -24,8 +26,12 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<PasswordLogin />} />
+        <Route path="/admin/register" element={<Register />} />
+        <Route path="/admin/login" element={<PasswordLogin />} />
+        <Route path="/admin/*" element={<AdminLayout />}>
+          <Route path="profile" element={<AdminProfilePage />} />
+        </Route>
+
         <Route path="/reset-password" element={<ForgetPassword />} />
         <Route path="/" element={loading ? <Splash /> : <Home />} />
         <Route path="/onboarding" element={<OnboardingScreen />} />

@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema(
     role: {
       type: String,
       enum: {
-        values: ["user", "delivery_agent", "admin"],
+        values: ["user", "delivery_agent", "restaurant", "admin"],
         message: "Role must be one of 'user', 'delivery_agent', or 'admin'.",
       },
       default: "user",
@@ -57,6 +57,12 @@ const userSchema = new mongoose.Schema(
     resetPasswordExpires: {
       type: Date,
     },
+    restaurant: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Restaurant",
+      },
+    ],
   },
   { timestamps: true }
 );

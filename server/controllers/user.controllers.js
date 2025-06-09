@@ -66,7 +66,9 @@ export const register = async (req, res, next) => {
 
     await user.save();
 
-    req.body.usernameOrEmail = email;
+    console.log("User registered successfully:", user);
+
+    req.body.email = email;
     req.body.password = password;
 
     const sanitizedUser = {
